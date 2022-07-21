@@ -5,26 +5,15 @@ import 'package:flutter_map/plugin_api.dart'; // Only import if required functio
 import 'package:latlong2/latlong.dart'; // Recommended for most use-cases
 import 'dart:math';
 
-class MapPage extends StatelessWidget {
+
+class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: MapUI(),
-      drawer: DrawerWidget(),
-    );
-  }
+  State<MapPage> createState() => _MapPageState();
 }
 
-class MapUI extends StatefulWidget {
-  const MapUI({Key? key}) : super(key: key);
-
-  @override
-  State<MapUI> createState() => _MapUIState();
-}
-
- class _MapUIState extends State<MapUI> {
+ class _MapPageState extends State<MapPage> {
 
   List<LatLng> markerLocs =[];
   List<Marker> campMarkers = [];
